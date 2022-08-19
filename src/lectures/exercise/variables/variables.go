@@ -25,4 +25,24 @@ package main
 import "fmt"
 
 func main() {
+	//* Store your favorite color in a variable using the `var` keyword
+	var myFavoriteColor string = "orange"
+	//* Store your birth year and age (in years) in two variables using
+	myBirthYear, myAge := 1985, 36
+	// Store your first & last initials in two variables using block assignment
+	var (
+		myFirstInitial = "S"
+		myLastInitial  = "A"
+	)
+	//* Declare (but don't assign!) a variable for your age (in days),
+	var myAgeInDays int
+	// then assign it on the next line by multiplying 365 with the age
+	myAgeInDays = myAge * 365
+	//* Print out information
+	fmt.Println("My favorite color is", myFavoriteColor)
+	fmt.Println("My birth year is", myBirthYear)
+	fmt.Println("My age is", myAge)
+	fmt.Println("Initials are", myFirstInitial, myLastInitial)
+	fmt.Println("My age in days is", myAgeInDays)
+
 }
