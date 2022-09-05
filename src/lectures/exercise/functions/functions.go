@@ -24,24 +24,29 @@ import "fmt"
 func greet(name string) {
 	fmt.Println("Hello", name)
 }
+
 //* Write a function that returns any message, and call it from within
 //  fmt.Println()
 func returnMessage() string {
 	return "Hello from returnMessage"
 }
+
 //* Write a function to add 3 numbers together, supplied as arguments, and
 //  return the answer
-func add(x,y,z int) int {
-	return x+y+z
+func add(x, y, z int) int {
+	return x + y + z
 }
+
 //* Write a function that returns any number
 func returnAnyNumber() int {
 	return 5
 }
+
 //* Write a function that returns any two numbers
 func returnAnyTwoNumbers() (int, int) {
 	return 5, 6
 }
+
 //* Add three numbers together using any combination of the existing functions.
 //  * Print the result
 //* Call every function at least once
