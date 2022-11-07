@@ -11,7 +11,25 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 func main() {
+	seed := rand.NewSource(time.Now().UnixNano())
+	gen := rand.New(seed)
+	switch age := gen.Intn(24); {
+	case age == 0:
+		fmt.Println("newborn")
+	case age < 4:
+		println("toddler")
+	case age < 13:
+		println("child")
+	case age < 18:
+		println("teenager")
+	default:
+		println("adult")
+	}
 }
