@@ -15,4 +15,22 @@ package main
 import "fmt"
 
 func main() {
+	//* Print integers 1 to 50, except:
+	for i := 1; i <= 105; i++ {
+		var w string
+		if i%3 == 0 {
+			w += "Fizz"
+		}
+		if i%5 == 0 {
+			w += "Buzz"
+		}
+		if i%7 == 0 {
+			w += "Fuzz"
+		}
+		if len(w) > 0 {
+			fmt.Println(w)
+		} else {
+			fmt.Println(i)
+		}
+	}
 }
