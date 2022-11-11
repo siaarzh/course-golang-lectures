@@ -16,7 +16,48 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+func roll(sides int) int {
+	rand.Seed(time.Now().UnixNano())
+	return rand.Intn(sides) + 1
+}
 
 func main() {
+	var numDice int = 2
+	var numRolls int = 10
+	var numSides int = 6
+
+	for i := 1; i <= numRolls; i++ {
+		rollSum := 0
+		fmt.Print("Roll #", i, ": ")
+		for j := 1; j <= numDice; j++ {
+			rollResult := roll(numSides)
+			if j > 1 {
+				fmt.Print(" + ", rollResult)
+			} else {
+				fmt.Print(rollResult)
+			}
+
+			rollSum += rollResult
+		}
+		fmt.Println(" =", rollSum)
+
+		switch {
+		case rollSum == 2 && numDice == 2:
+			fmt.Println("Snake Eyes")
+		case rollSum == 7:
+			fmt.Println("Lucky 7")
+		case rollSum%2 == 0:
+			fmt.Println("Even")
+		default:
+			fmt.Println("Odd")
+		}
+
+	}
+
 }
